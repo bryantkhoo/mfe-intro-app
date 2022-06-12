@@ -8,7 +8,7 @@ module.exports = {
   mode: "development",
   devServer: {
     contentBase: path.join(__dirname, "dist"),
-    port: 6358,
+    port: 6359,
   },
   output: {
     publicPath: "auto",
@@ -27,10 +27,10 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "home",
+      name: "child",
       filename: "remoteEntry.js",
-      remotes: {
-        child: `child@${getRemoteEntryUrl(6359)}`,
+      exposes: {
+        "./App": `./App.jsx`,
       },
       shared: [
         {

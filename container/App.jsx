@@ -1,7 +1,14 @@
 import React from "react";
-import ReactDOM from "react-dom";
+const Child = React.lazy(() => import("child/App"));
 
 const App = () => {
-  return <>Container app</>;
+  return (
+    <>
+      <React.Suspense fallback="loading">
+        Container app <Child />
+      </React.Suspense>
+    </>
+  );
 };
-ReactDOM.render(<App />, document.getElementById("root"));
+
+export default App;
