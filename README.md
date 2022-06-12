@@ -1,1 +1,1 @@
-# mfe-intro-app
+# Module federation example for codesandbox
