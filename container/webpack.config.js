@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin =
   require("webpack").container.ModuleFederationPlugin;
 const path = require("path");
+// const deps = require("./package.json").dependencies;
 
 module.exports = {
   entry: "./index.js",
@@ -34,6 +35,7 @@ module.exports = {
       },
       shared: [
         {
+          // ...deps,
           react: { singleton: true, eager: true },
           "react-dom": { singleton: true, eager: true },
         },
