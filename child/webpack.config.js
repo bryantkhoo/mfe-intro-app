@@ -29,6 +29,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "child",
       filename: "remoteEntry.js",
+      remotes: {
+        container: `container@${getRemoteEntryUrl(6358)}`,
+      },
       exposes: {
         "./App": `./App.jsx`,
       },

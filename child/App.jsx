@@ -1,7 +1,12 @@
 import React from "react";
+import CountActions from "./CountActions.jsx";
 
 const App = () => {
-  return <>Child app</>;
+  return (
+    <>
+      <CountActions />
+    </>
+  );
 };
 
 export default App;

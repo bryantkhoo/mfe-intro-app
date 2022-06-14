@@ -19,7 +19,7 @@
   "scripts": {
     "start": "webpack-cli serve",
     "build": "webpack --mode production",
-    "serve": "serve dist -p 6358",
+    "serve": "serve dist -p 6359",
     "clean": "rm -rf dist"
   }
 }

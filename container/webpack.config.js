@@ -27,9 +27,13 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "home",
+      name: "container",
       filename: "remoteEntry.js",
+      exposes: {
+        "./GlobalContext": `./GlobalContext.jsx`,
+      },
       remotes: {
+        container: `container@${getRemoteEntryUrl(6358)}`,
         child: `child@${getRemoteEntryUrl(6359)}`,
       },
       shared: [

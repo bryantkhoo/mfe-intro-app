@@ -1,12 +1,18 @@
 import React from "react";
+import CountLabel from "./CountLabel.jsx";
+import { GlobalProvider } from "container/GlobalContext";
 const Child = React.lazy(() => import("child/App"));
 
 const App = () => {
   return (
     <>
-      <React.Suspense fallback="loading">
-        Container app <Child />
-      </React.Suspense>
+      <GlobalProvider>
+        <React.Suspense fallback="loading">
+          <CountLabel />
+          <br />
+          <Child />
+        </React.Suspense>
+      </GlobalProvider>
     </>
   );
 };
