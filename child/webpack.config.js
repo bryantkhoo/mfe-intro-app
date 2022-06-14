@@ -7,6 +7,7 @@ module.exports = {
   entry: "./index.js",
   mode: "development",
   devServer: {
+    historyApiFallback: true,
     contentBase: path.join(__dirname, "dist"),
     port: 6359,
   },
@@ -36,6 +37,7 @@ module.exports = {
         {
           react: { singleton: true, eager: true },
           "react-dom": { singleton: true, eager: true },
+          "react-router-dom": { singleton: true, eager: true },
         },
       ],
     }),
