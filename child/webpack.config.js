@@ -11,6 +11,7 @@ module.exports = {
     port: 6359,
   },
   output: {
+    path: __dirname + "/build",
     publicPath: "auto",
   },
   module: {
@@ -37,8 +38,8 @@ module.exports = {
       },
       shared: [
         {
-          react: { singleton: true, eager: true },
-          "react-dom": { singleton: true, eager: true },
+          react: { singleton: true },
+          "react-dom": { singleton: true },
         },
       ],
     }),

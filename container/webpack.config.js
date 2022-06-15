@@ -11,7 +11,10 @@ module.exports = {
     port: 6358,
   },
   output: {
-    publicPath: "auto",
+    filename: "[name].js",
+    path: __dirname + "/build",
+    chunkFilename: "[id].[chunkhash].js",
+    publicPath: "/",
   },
   module: {
     rules: [
@@ -38,9 +41,10 @@ module.exports = {
       },
       shared: [
         {
-          react: { singleton: true, eager: true },
-          "react-dom": { singleton: true, eager: true },
+          react: { singleton: true },
+          "react-dom": { singleton: true },
         },
+        "./GlobalContext.jsx",
       ],
     }),
     new HtmlWebpackPlugin({
