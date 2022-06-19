@@ -3,7 +3,8 @@
   "workspaces": {
     "packages": [
       "container",
-      "child"
+      "child",
+      "child2"
     ]
   },
   "scripts": {

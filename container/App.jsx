@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 const Child = React.lazy(() => import("child/App"));
+const Child2 = React.lazy(() => import("child2/App"));
 
 const App = () => {
   return (
@@ -13,6 +14,8 @@ const App = () => {
           <br />
           <Link to={"/child"}> Go to: Child</Link>
           <br />
+          <Link to={"/child2"}> Go to: Child2</Link>
+          <br />
           <Routes>
             <Route path="/" index element={<>Home</>} />
             <Route
@@ -20,6 +23,14 @@ const App = () => {
               element={
                 <React.Suspense fallback="loading">
                   <Child />
+                </React.Suspense>
+              }
+            />
+            <Route
+              path="/child2/*"
+              element={
+                <React.Suspense fallback="loading">
+                  <Child2 />
                 </React.Suspense>
               }
             />

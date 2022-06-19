@@ -9,7 +9,7 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     contentBase: path.join(__dirname, "dist"),
-    port: 6358,
+    port: 6360,
   },
   output: {
     publicPath: "auto",
@@ -28,11 +28,10 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "home",
+      name: "child2",
       filename: "remoteEntry.js",
-      remotes: {
-        child: `child@${getRemoteEntryUrl(6359)}`,
-        child2: `child2@${getRemoteEntryUrl(6360)}`,
+      exposes: {
+        "./App": `./App.jsx`,
       },
       shared: [
         {
